@@ -1,0 +1,19 @@
+@function vw($px) {
+    @return calc($px/640) *100+vw;
+}
+
+@function vw1920($px) {
+    @return calc($px/1920) *100+vw;
+}
+
+@function vh($px) {
+    @return calc($px/640) *100+vh;
+}
+
+@mixin bg($width, $hight, $img) {
+    width: $width;
+    height: $hight;
+    background-repeat: no-repeat;
+    background-size: $width;
+    background-image: url($img);
+}
