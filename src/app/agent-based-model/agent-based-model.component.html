@@ -1,0 +1,216 @@
+<main>
+  <header class="page-header">
+    <h1>
+      Agent-Based Modelling and its Relevance in Examining the Evolution of
+      Dating Norms and Practices to Predict How Generation Alpha Will Date
+    </h1>
+  </header>
+  <header class="abm-header">
+    <aside>
+      Setup
+
+      <button
+        (click)="downloadResults.emit()"
+        [disabled]="!simulationRan || simulationRunning"
+        mat-raised-button
+      >
+        Download Results
+      </button>
+    </aside>
+    <article>
+      <button (click)="resetSimulation()" mat-raised-button>Setup</button>
+      <button
+        (click)="resetSimulation()"
+        [disabled]="!simulationRan"
+        mat-raised-button
+      >
+        Reset
+      </button>
+      <button
+        (click)="stopSimulationButton()"
+        [disabled]="!simulationRunning"
+        mat-raised-button
+      >
+        Stop
+      </button>
+      <button
+        (click)="stepOneForwardSimulation()"
+        [disabled]="simulationRunning"
+        mat-raised-button
+      >
+        Step
+      </button>
+      <button
+        (click)="startSimulation()"
+        [disabled]="simulationRunning"
+        mat-raised-button
+      >
+        Start {{testNumber}}/{{testsToRun.length}}
+      </button>
+
+      <div class="settings-input">
+        <label>Speed:</label
+        ><mat-slider
+          [disabled]="simulationRunning"
+          min="0"
+          max="100"
+          step="33"
+          showTickMarks
+          discrete
+          [displayWith]="formatLabel"
+        >
+          <input
+            matSliderThumb
+            [value]="framePerSecond"
+            (input)="setValues('framePerSecond', $event)"
+          />
+        </mat-slider>
+      </div>
+      <div class="counter">{{ currentStep }} Steps</div>
+      <div class="settings-input">
+        Converged?<mat-checkbox
+          disabled="true"
+          [checked]="isConverged"
+        ></mat-checkbox>
+      </div>
+    </article>
+  </header>
+  <section class="scene">
+    <aside class="settings-form">
+      <h3>Env</h3>
+      <div class="settings-input">
+        <label>Agents:</label
+        ><mat-slider min="2" max="1000" step="2" discrete>
+          <input
+            matSliderThumb
+            [value]="numberOfAgents"
+            (input)="setValues('numberOfAgents', $event)"
+          />
+        </mat-slider>
+      </div>
+      <div class="settings-input">
+        <label>Stop After:</label
+        ><mat-slider min="0" max="10000" step="1" discrete>
+          <input
+            matSliderThumb
+            [value]="stopAfterXSteps"
+            (input)="setValues('stopAfterXSteps', $event)"
+          />
+        </mat-slider>
+      </div>
+      <hr />
+      <h3>Audience</h3>
+      <div class="settings-input">
+        <label>Age:</label>
+        <mat-slider min="18" max="50" step="1" showTickMarks discrete>
+          <input matSliderStartThumb (input)="setValues('minAge', $event)" />
+          <input matSliderEndThumb (input)="setValues('maxAge', $event)" />
+        </mat-slider>
+      </div>
+      <div class="settings-input">
+        <label>Height:</label>
+        <mat-slider min="150" max="200" step="1" showTickMarks discrete>
+          <input matSliderStartThumb (input)="setValues('minHeight', $event)" />
+          <input matSliderEndThumb (input)="setValues('maxHeight', $event)" />
+        </mat-slider>
+      </div>
+      <div class="settings-input">
+        <label>Weight:</label>
+        <mat-slider min="50" max="100" step="1" showTickMarks discrete>
+          <input matSliderStartThumb (input)="setValues('minWeight', $event)" />
+          <input matSliderEndThumb (input)="setValues('maxWeight', $event)" />
+        </mat-slider>
+      </div>
+      <hr />
+      <div class="settings-input">
+        <h3>Priorties</h3>
+        <button
+          (click)="confiureModal()"
+          [disabled]="simulationRunning"
+          mat-raised-button
+        >
+          Configure Automation
+        </button>
+      </div>
+      <div class="settings-input">
+        <label>Education:</label
+        ><mat-slider min="0.0" max="1.0" step="0.1" discrete>
+          <input
+            matSliderThumb
+            [value]="educationPriority"
+            (input)="setValues('educationPriority', $event)"
+          />
+        </mat-slider>
+      </div>
+      <div class="settings-input">
+        <label>Age:</label
+        ><mat-slider min="0.0" max="1.0" step="0.1" discrete>
+          <input
+            matSliderThumb
+            [value]="agePriority"
+            (input)="setValues('agePriority', $event)"
+          />
+        </mat-slider>
+      </div>
+      <div class="settings-input">
+        <label>Height:</label
+        ><mat-slider min="0.0" max="1.0" step="0.1" discrete>
+          <input
+            matSliderThumb
+            [value]="heightPriority"
+            (input)="setValues('heightPriority', $event)"
+          />
+        </mat-slider>
+      </div>
+      <div class="settings-input">
+        <label>Weight:</label
+        ><mat-slider min="0.0" max="1.0" step="0.1" discrete>
+          <input
+            matSliderThumb
+            [value]="weightPriority"
+            (input)="setValues('weightPriority', $event)"
+          />
+        </mat-slider>
+      </div>
+      <div class="settings-input">
+        <label>Gender:</label
+        ><mat-slider min="0.0" max="1.0" step="0.1" discrete>
+          <input
+            matSliderThumb
+            [value]="genderPriority"
+            (input)="setValues('genderPriority', $event)"
+          />
+        </mat-slider>
+      </div>
+      <div class="settings-input">
+        <label>VR:</label
+        ><mat-slider min="0.0" max="1.0" step="0.1" discrete>
+          <input
+            matSliderThumb
+            [value]="vrPriority"
+            (input)="setValues('vrPriority', $event)"
+          />
+        </mat-slider>
+      </div>
+      <div class="settings-input">
+        <label>Generation:</label
+        ><mat-slider min="0.0" max="1.0" step="0.1" discrete>
+          <input
+            matSliderThumb
+            [value]="generationPriority"
+            (input)="setValues('generationPriority', $event)"
+          />
+        </mat-slider>
+      </div>
+    </aside>
+    <article class="canvas">
+      <canvas #simulationCanvas width="800" height="850"></canvas>
+    </article>
+  </section>
+  <footer>
+    <span class="dot green"></span> Generation Alpha
+    <span class="dot orange"></span> Generation Z
+    <span class="dot blue"></span> Generation Y<span class="dot border"></span>
+    Using VR <span class="line"></span> Match between agents
+  </footer>
+</main>

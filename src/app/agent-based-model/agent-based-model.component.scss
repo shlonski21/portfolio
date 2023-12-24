@@ -1,0 +1,139 @@
+canvas {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    border: 1px solid #cfcfcf;
+  }
+  
+  .canvas {
+    .canvas-container {
+      width: 800px;
+      height: 600px;
+      overflow: hidden;
+    }
+    position: relative;
+  }
+  
+  main {
+    margin: 0 auto;
+    position: relative;
+    width: 1200px;
+  }
+  
+  .page-header {
+    width: 100%;
+  }
+  
+  .abm-header {
+    display: flex;
+    flex-direction: row;
+    article {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+    button {
+      &:not(:first-child) {
+        margin-left: 10px;
+      }
+    }
+    .counter {
+      margin-left: 10px;
+    }
+    .settings-input {
+      margin-left: 10px;
+      label {
+        width: 60px;
+      }
+      mat-slider {
+        width: 170px;
+      }
+    }
+  
+    aside {
+      button {
+        margin-left: 10px;
+      }
+      width: 300px;
+      box-sizing: border-box;
+      margin-right: 15px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      font-size: 28px;
+    }
+  }
+  
+  .scene {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    height: 852px;
+    aside {
+      width: 300px;
+      box-sizing: border-box;
+      margin-right: 15px;
+      border: 1px solid #cfcfcf;
+      background-color: #f5f5f5;
+    }
+  }
+  
+  .settings-form {
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  
+  .settings-input {
+    display: flex;
+    align-items: center;
+    button {
+      margin-left: 15px;
+    }
+    label {
+      width: 120px;
+      font-weight: 400;
+    }
+    mat-slider {
+      width: 140px;
+    }
+  }
+  
+  footer {
+    margin-top: 15px;
+    font-weight: 400;
+    font-size: 14px;
+  
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      display: inline-block;
+      box-sizing: border-box;
+      &:not(:first-child) {
+        margin-left: 10px;
+      }
+      margin-right: 5px;
+      &.orange {
+        background-color: #f3d050;
+      }
+      &.green {
+        background-color: #73cf8b;
+      }
+      &.blue {
+        background-color: #d7f3fe;
+      }
+      &.border {
+        border: 2px solid #024763;
+      }
+    }
+    .line {
+      margin-left: 10px;
+      display: inline-block;
+      box-sizing: border-box;
+      background-color: black;
+      width: 15px;
+      height: 2px;
+    }
+  }
+  
