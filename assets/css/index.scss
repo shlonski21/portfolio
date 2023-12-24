@@ -1,0 +1,233 @@
+@import "./reset.scss";
+@import "./functions.scss";
+
+html {
+  direction: ltr;
+  min-height: 100%;
+  position: relative;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  direction: rtl;
+  line-height: 1;
+  background-color: #fff;
+  padding-bottom: 0;
+  font-family: "Open Sans", sans-serif;
+  font-size: vw(21);
+}
+
+body {
+  background: #afdaf9;
+}
+
+// header
+header {
+  &:before {
+    content: " ";
+    position: relative;
+    width: 100%;
+    height: vw(35);
+    background: #afdaf9;
+    display: block;
+    box-sizing: content-box;
+  }
+  background-color: #deac57;
+  width: 100%;
+  height: vw(120);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  box-sizing: content-box;
+
+  .shlonski-logo {
+    position: absolute;
+    background-image: url(../images/shlonski_logo_mobile.png);
+    width: vw(200);
+    height: 100vh;
+    background-position: top center;
+    background-repeat: no-repeat;
+    left: vw(14);
+    top: vw(-5);
+  }
+}
+
+//footer
+footer {
+  background-image: url(../images/footer_mobile.png);
+  background-repeat: no-repeat;
+  background-position: top center;
+  width: 100%;
+  height: vw(50);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+}
+
+main {
+  position: relative;
+  margin-top: vw(150);
+  width: 100%;
+  margin-bottom: vw(50);
+
+  section {
+    margin: 0 auto;
+    display: flex;
+    position: relative;
+  }
+}
+
+article {
+  &.center {
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+  }
+  h1,
+  h3 {
+    color: #0f64ad;
+    line-height: 1.2;
+  }
+  h1 {
+    font-size: vw(50);
+    font-weight: 800;
+    margin: vw(25) 0;
+  }
+
+  h3 {
+    font-size: vw(25);
+    font-weight: normal;
+  }
+}
+
+// aboutus
+.aboutus {
+  background: #afdaf9;
+  flex-direction: column-reverse;
+  width: vw(443);
+  padding-bottom: vw(20);
+  iframe {
+    width: 100%;
+    height: vw(792);
+  }
+}
+
+//services
+.services {
+  background-color: #fff;
+  min-height: vw(579);
+  width: 100%;
+  position: relative;
+
+  .scroll-wrapper {
+    margin-top: vw(30);
+    width: 100%;
+    overflow: hidden;
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+
+    .scrollbar {
+      display: flex;
+      overflow: hidden;
+      width: vw(270 * 6 + 20);
+      .box {
+        &:first-child {
+          margin-right: vw(20);
+        }
+        margin-left: vw(20);
+        .image {
+          width: vw(250);
+          height: vw(250);
+          border-radius: 50%;
+          background-repeat: no-repeat;
+          background-position: center center;
+          &.image-1 {
+            background-image: url(../images/1.jpg);
+          }
+          &.image-2 {
+            background-image: url(../images/2.jpg);
+          }
+          &.image-3 {
+            background-image: url(../images/3.jpg);
+          }
+          &.image-4 {
+            background-image: url(../images/4.jpg);
+          }
+          &.image-5 {
+            background-image: url(../images/5.jpg);
+          }
+          &.image-6 {
+            background-image: url(../images/6.jpg);
+          }
+        }
+        .title {
+          margin-top: vw(20);
+          font-size: vw(35);
+          font-weight: 800;
+          color: #0f64ad;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+.customers {
+  background-color: #fff;
+  min-height: vw(579);
+}
+.video {
+  min-height: vw(579);
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  iframe {
+    width: 80%;
+    height: vw(300);
+  }
+}
+
+.relationships {
+    padding-bottom: vw(30);
+  .share-icons {
+    display: flex;
+    flex-direction: row-reverse;
+
+    a {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+    .share-icon {
+      width: vw(95);
+      height: vw(95);
+      background-repeat: no-repeat;
+      &:not(:last-child) {
+        margin-right: vw(10);
+      }
+    }
+    .fb {
+      background-image: url(../images/facebook.png);
+    }
+    .whatsapp {
+      background-image: url(../images/whatsapp.png);
+    }
+    .tiktok {
+      background-image: url(../images/tiktok.png);
+    }
+    .insta {
+      background-image: url(../images/instagram.png);
+    }
+    .youtube {
+      background-image: url(../images/youtube.png);
+    }
+  }
+}
