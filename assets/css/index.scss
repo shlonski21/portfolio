@@ -48,10 +48,10 @@ header {
 
   .shlonski-logo {
     position: absolute;
-    background-image: url(../images/logo.png);
-    width: vw(152);
-    height: vw(96);
-    background-size: cover;
+    background-image: url(../images/logo_mobile.png);
+    width: vw(200);
+    height: vw(140);
+    background-size: contain;
     background-position: top center;
     background-repeat: no-repeat;
     left: vw(10);
@@ -59,7 +59,7 @@ header {
     &:after {
       content: " ";
       position: absolute;
-      width: vw(8);
+      width: vw(15);
       // height: vw(300);
       height: 100vh;
       background: #1264ab;
@@ -67,7 +67,7 @@ header {
       box-sizing: content-box;
       @media only screen and (max-width: 1024px) {
         top: vw(93);
-        left: vw(15);
+        left: vw(3);
       }
     }
   }
@@ -79,10 +79,12 @@ header {
     height: 120px;
 
     .shlonski-logo {
+      background-image: url(../images/logo.png);
       width: 317px;
       height: 201px;
       left: 30px;
       top: 20px;
+      background-size: contain;
       &:after {
         width: 21px;
         height: 100vh;
@@ -181,6 +183,14 @@ article {
     align-items: center;
     article {
       width: 856px;
+      height: 725px;
+      .wrapper-aboutus {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        
+      } cvvv
       h1 {
         font-size: 70px;
       }

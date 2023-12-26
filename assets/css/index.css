@@ -158,10 +158,10 @@ header:before {
 }
 header .shlonski-logo {
   position: absolute;
-  background-image: url(../images/logo.png);
-  width: 23.75vw;
-  height: 15vw;
-  background-size: cover;
+  background-image: url(../images/logo_mobile.png);
+  width: 31.25vw;
+  height: 21.875vw;
+  background-size: contain;
   background-position: top center;
   background-repeat: no-repeat;
   left: 1.5625vw;
@@ -170,7 +170,7 @@ header .shlonski-logo {
 header .shlonski-logo:after {
   content: " ";
   position: absolute;
-  width: 1.25vw;
+  width: 2.34375vw;
   height: 100vh;
   background: #1264ab;
   display: block;
@@ -179,7 +179,7 @@ header .shlonski-logo:after {
 @media only screen and (max-width: 1024px) {
   header .shlonski-logo:after {
     top: 14.53125vw;
-    left: 2.34375vw;
+    left: 0.46875vw;
   }
 }
 @media only screen and (min-width: 1024px) {
@@ -190,10 +190,12 @@ header .shlonski-logo:after {
     height: 60px;
   }
   header .shlonski-logo {
+    background-image: url(../images/logo.png);
     width: 317px;
     height: 201px;
     left: 30px;
     top: 20px;
+    background-size: contain;
   }
   header .shlonski-logo:after {
     width: 21px;
@@ -291,8 +293,15 @@ article h3 {
   }
   .aboutus article {
     width: 856px;
+    height: 725px;
   }
-  .aboutus article h1 {
+  .aboutus article .wrapper-aboutus {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+  .aboutus article cvvv h1 {
     font-size: 70px;
   }
   .aboutus article h3 {
