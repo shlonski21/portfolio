@@ -23,24 +23,49 @@
       rel="stylesheet"
     />
     <link href="./assets/css/index.css" rel="stylesheet" />
+    <script>
+      function smoothScrollToElement(elementId) {
+        var targetElement = document.getElementById(elementId);
+
+        if (targetElement) {
+          var targetOffset = targetElement.offsetTop;
+
+          window.scrollTo({
+            top: targetOffset,
+            behavior: "smooth",
+          });
+        }
+      }
+    </script>
   </head>
   <body>
     <header>
       <div class="shlonski-logo"></div>
+      <div class="menu">
+        <div class="menu-item">
+          <a href="javascript: smoothScrollToElement('aboutus');">ראשי</a>
+        </div>
+        <div class="menu-item">
+          <a href="javascript: void(0);">קצת עלינו</a>
+        </div>
+        <div class="menu-item">
+          <a target="_blank" href="https://api.whatsapp.com/send?phone=972542665252">צרו קשר</a>
+        </div>
+      </div>
     </header>
     <main>
-      <section class="aboutus">
+      <section class="aboutus" id="aboutus">
         <article>
           <div class="wrapper-aboutus">
-          <h1>תרימו את העסק שלכם לשלב הבא</h1>
-          <h3>
-            עידן הפוסטים הגיע לסופו והשחקן הראשי עכשיו הוא סרטוני תוכן ממוקדים
-            בעלי ערך שיציגו את העסק שלכם בצורה הכי מקצועית ומדוייקת שיש. אחרי
-            נסיון של שנים סטודיו שלונסקי 21 הגיע בשביל לספק לכם מוצר שלם ומוגמר.
-            לקחת לידיים שלנו את כתיבת, יצירת, צילום ועריכת התוכן לעסק שלכם, שלא
-            רק יעביר בצורה חדה ומדוייקת את מהות העסק-אלא גם תיצור לכם קהילה חזקה
-            של עוקבים ולקוחות בצורה אורגנית!
-          </h3>
+            <h1>תרימו את העסק שלכם לשלב הבא</h1>
+            <h3>
+              עידן הפוסטים הגיע לסופו והשחקן הראשי עכשיו הוא סרטוני תוכן ממוקדים
+              בעלי ערך שיציגו את העסק שלכם בצורה הכי מקצועית ומדוייקת שיש. אחרי
+              נסיון של שנים סטודיו שלונסקי 21 הגיע בשביל לספק לכם מוצר שלם
+              ומוגמר. לקחת לידיים שלנו את כתיבת, יצירת, צילום ועריכת התוכן לעסק
+              שלכם, שלא רק יעביר בצורה חדה ומדוייקת את מהות העסק-אלא גם תיצור
+              לכם קהילה חזקה של עוקבים ולקוחות בצורה אורגנית!
+            </h3>
           </div>
         </article>
         <aside>
@@ -134,7 +159,7 @@
           </div>
         </article>
       </section>
-      <section class="relationships">
+      <section class="relationships" id="relationships">
         <article class="center">
           <div class="title">
             <h1>דברו איתנו</h1>
@@ -162,7 +187,7 @@
               ></a>
             </div>
             <div class="share-icon whatsapp">
-              <a target="_blank" href="https://wa.me/qr/7VS3Q7VZM6OLO1"></a>
+              <a target="_blank" href="https://api.whatsapp.com/send?phone=972542665252"></a>
             </div>
           </div>
         </article>

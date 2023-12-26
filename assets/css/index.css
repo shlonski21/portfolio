@@ -205,6 +205,27 @@ header .shlonski-logo:after {
   }
 }
 
+header .menu {
+  display: none;
+}
+@media only screen and (min-width: 1024px) {
+  header .menu {
+    height: 60px;
+    display: flex;
+    align-items: center;
+  }
+  header .menu .menu-item {
+    padding: 5px 10px;
+    color: #0f64ad;
+    line-height: 1;
+    font-weight: 700;
+    margin-right: 20px;
+  }
+  header .menu .menu-item:hover {
+    background-color: #afdaf9;
+  }
+}
+
 footer {
   background-image: url(../images/footer_mobile_2.png);
   background-repeat: repeat-x;
@@ -564,11 +585,12 @@ article h3 {
 }
 @media only screen and (min-width: 1024px) {
   .relationships {
+    margin-bottom: 200px;
     padding-bottom: 0;
     height: 300px;
   }
   .relationships .share-icons {
-    margin-top: 20px;
+    margin-top: 50px;
   }
   .relationships .share-icons .share-icon {
     width: 87px;

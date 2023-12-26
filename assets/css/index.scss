@@ -95,6 +95,26 @@ header {
   }
 }
 
+header .menu {
+  display: none;
+  @media only screen and (min-width: 1024px) {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    .menu-item {
+      padding: 5px 10px;
+      color: #0f64ad;
+      line-height: 1;
+      font-weight: 700;
+
+      &:hover {
+        background-color: #afdaf9;
+      }
+      margin-right: 20px;
+    }
+  }
+}
+
 //footer
 footer {
   background-image: url(../images/footer_mobile_2.png);
@@ -455,10 +475,11 @@ article {
     }
   }
   @media only screen and (min-width: 1024px) {
+    margin-bottom: 200px;
     padding-bottom: 0;
     height: 300px;
     .share-icons {
-      margin-top: 20px;
+      margin-top: 50px;
       .share-icon {
         width: 87px;
         height: 87px;
