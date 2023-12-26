@@ -144,7 +144,7 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1;
+  z-index: 2;
   box-sizing: content-box;
 }
 header:before {
@@ -158,13 +158,29 @@ header:before {
 }
 header .shlonski-logo {
   position: absolute;
-  background-image: url(../images/shlonski_logo_mobile.png);
-  width: 31.25vw;
-  height: 100vh;
+  background-image: url(../images/logo.png);
+  width: 23.75vw;
+  height: 15vw;
+  background-size: cover;
   background-position: top center;
   background-repeat: no-repeat;
-  left: 2.1875vw;
-  top: -0.78125vw;
+  left: 1.5625vw;
+  top: 3.125vw;
+}
+header .shlonski-logo:after {
+  content: " ";
+  position: absolute;
+  width: 1.25vw;
+  height: 100vh;
+  background: #1264ab;
+  display: block;
+  box-sizing: content-box;
+}
+@media only screen and (max-width: 1024px) {
+  header .shlonski-logo:after {
+    top: 14.53125vw;
+    left: 2.34375vw;
+  }
 }
 @media only screen and (min-width: 1024px) {
   header {
@@ -174,11 +190,16 @@ header .shlonski-logo {
     height: 60px;
   }
   header .shlonski-logo {
-    background-image: url(../images/logo_desktop.png);
-    width: 292px;
-    height: 1082px;
+    width: 317px;
+    height: 201px;
     left: 30px;
-    top: -5px;
+    top: 20px;
+  }
+  header .shlonski-logo:after {
+    width: 21px;
+    height: 100vh;
+    top: 154px;
+    left: 29px;
   }
 }
 
@@ -191,7 +212,7 @@ footer {
   position: fixed;
   bottom: 0;
   left: 0;
-  z-index: 2;
+  z-index: 1;
 }
 @media only screen and (min-width: 1024px) {
   footer {
