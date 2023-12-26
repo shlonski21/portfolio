@@ -52,7 +52,7 @@ header {
     width: vw(200);
     height: 100vh;
     background-position: top center;
-    background-repeat: repeat-y;
+    background-repeat: no-repeat;
     left: vw(14);
     top: vw(-5);
   }
@@ -79,7 +79,7 @@ footer {
   background-repeat: repeat-x;
   background-position: top center;
   width: 100%;
-  height: vw(50);
+  height: vw(100);
   position: fixed;
   bottom: 0;
   left: 0;
@@ -213,6 +213,7 @@ article {
           border-radius: 50%;
           background-repeat: no-repeat;
           background-position: center center;
+          background-size: contain;
           &.image-1 {
             background-image: url(../images/1.jpg);
           }
@@ -383,8 +384,9 @@ article {
 }
 
 .relationships {
-  padding-bottom: vw(30);
+  padding-bottom: vw(80);
   .share-icons {
+    margin-top: vw(20);
     display: flex;
     flex-direction: row-reverse;
 
@@ -395,9 +397,11 @@ article {
     }
 
     .share-icon {
-      width: vw(95);
-      height: vw(95);
+      width: vw(64);
+      height: vw(63);
       background-repeat: no-repeat;
+      background-position: top center;
+      background-size: contain;
       &:not(:last-child) {
         margin-right: vw(10);
       }
