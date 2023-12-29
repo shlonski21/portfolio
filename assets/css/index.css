@@ -221,7 +221,7 @@ header .menu {
     font-weight: 700;
     margin-right: 20px;
   }
-  header .menu .menu-item:hover {
+  header .menu .menu-item.active, header .menu .menu-item:hover {
     background-color: #afdaf9;
   }
 }
@@ -368,6 +368,7 @@ article h3 {
 }
 .services .scroll-wrapper .scrollbar .box {
   margin-left: 3.125vw;
+  position: relative;
 }
 .services .scroll-wrapper .scrollbar .box:first-child {
   margin-right: 3.125vw;
@@ -379,6 +380,32 @@ article h3 {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: contain;
+}
+.services .scroll-wrapper .scrollbar .box .image .overlay {
+  position: absolute;
+  width: 39.0625vw;
+  height: 39.0625vw;
+  border-radius: 50%;
+  background-color: #afdaf9;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  will-change: opacity;
+  transition: opacity 0.5s;
+  display: grid;
+  place-content: center;
+}
+.services .scroll-wrapper .scrollbar .box .image:hover .overlay, .services .scroll-wrapper .scrollbar .box .image.active .overlay {
+  opacity: 1;
+}
+.services .scroll-wrapper .scrollbar .box .image .overlay-text {
+  width: 33.75vw;
+  text-align: center;
+  line-height: 1.2;
+  font-weight: 500;
+  font-size: 3.90625vw;
+  color: #0F64AD;
+  white-space: normal;
 }
 .services .scroll-wrapper .scrollbar .box .image.image-1 {
   background-image: url(../images/1.jpg);
@@ -429,9 +456,17 @@ article h3 {
     margin-right: 0px;
   }
   .services .scroll-wrapper .scrollbar .box .image {
+    cursor: pointer;
     width: 300px;
     height: 300px;
-    border-radius: 50%;
+  }
+  .services .scroll-wrapper .scrollbar .box .image .overlay-text {
+    width: 236px;
+    font-size: 23px;
+  }
+  .services .scroll-wrapper .scrollbar .box .image .overlay {
+    width: 300px;
+    height: 300px;
   }
   .services .scroll-wrapper .scrollbar .box .item-title {
     margin-top: 20px;
