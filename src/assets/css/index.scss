@@ -107,6 +107,7 @@ header .menu {
       line-height: 1;
       font-weight: 700;
 
+      &.active,
       &:hover {
         background-color: #afdaf9;
       }
@@ -211,9 +212,8 @@ article {
         display: flex;
         flex-direction: column;
         align-items: start;
-        
-      } cvvv
-      h1 {
+      }
+      cvvv h1 {
         font-size: 70px;
       }
       h3 {
@@ -259,7 +259,37 @@ article {
           margin-right: vw(20);
         }
         margin-left: vw(20);
+        position: relative;
         .image {
+          .overlay {
+            position: absolute;
+            width: vw(250);
+            height: vw(250);
+            border-radius: 50%;
+            background-color: #afdaf9;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            will-change: opacity;
+            transition: opacity 0.5s;
+            display: grid;
+            place-content: center;
+          }
+          &:hover,
+          &.active {
+            .overlay {
+              opacity: 1;
+            }
+          }
+          .overlay-text {
+            width: vw(216);
+            text-align: center;
+            line-height: 1.2;
+            font-weight: 500;
+            font-size: vw(25);
+            color: #0F64AD;
+            white-space: normal;
+          }
           width: vw(250);
           height: vw(250);
           border-radius: 50%;
@@ -317,9 +347,17 @@ article {
           margin-bottom: 20px;
 
           .image {
+            cursor: pointer;
+            .overlay-text {
+              width: 236px;
+              font-size: 23px;
+            }
+            .overlay {
+              width: 300px;
+              height: 300px;
+            }
             width: 300px;
             height: 300px;
-            border-radius: 50%;
           }
           .item-title {
             margin-top: 20px;
