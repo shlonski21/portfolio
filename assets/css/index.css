@@ -206,19 +206,26 @@ header .shlonski-logo:after {
 }
 
 header .menu {
-  display: none;
+  display: flex;
+  align-items: center;
+  color: #0f64ad;
+  line-height: 1;
+  font-weight: 700;
+  height: 13.28125vw;
+}
+header .menu .menu-item {
+  padding: 0.78125vw 1.5625vw;
+  margin-right: 3.125vw;
+}
+header .menu .menu-item.active, header .menu .menu-item:hover {
+  background-color: #afdaf9;
 }
 @media only screen and (min-width: 1024px) {
   header .menu {
     height: 60px;
-    display: flex;
-    align-items: center;
   }
   header .menu .menu-item {
     padding: 5px 10px;
-    color: #0f64ad;
-    line-height: 1;
-    font-weight: 700;
     margin-right: 20px;
   }
   header .menu .menu-item.active, header .menu .menu-item:hover {
@@ -242,6 +249,7 @@ footer {
   footer {
     background-image: url(../images/footer.png);
     height: 122px;
+    bottom: -2px;
   }
 }
 
@@ -305,6 +313,11 @@ article h3 {
   width: 100%;
   height: 123.75vw;
 }
+.aboutus p {
+  color: #0F64AD;
+  font-weight: 400;
+  line-height: 1.2;
+}
 @media only screen and (min-width: 1024px) {
   .aboutus {
     flex-direction: row;
@@ -315,7 +328,7 @@ article h3 {
     align-items: center;
   }
   .aboutus article {
-    width: 856px;
+    width: 1000px;
     height: 725px;
   }
   .aboutus article .wrapper-aboutus {
@@ -324,7 +337,10 @@ article h3 {
     flex-direction: column;
     align-items: start;
   }
-  .aboutus article cvvv h1 {
+  .aboutus article p {
+    color: #0F64AD;
+  }
+  .aboutus article h1 {
     font-size: 70px;
   }
   .aboutus article h3 {

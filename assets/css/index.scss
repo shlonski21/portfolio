@@ -96,16 +96,25 @@ header {
 }
 
 header .menu {
-  display: none;
+  display: flex;
+  align-items: center;
+  color: #0f64ad;
+  line-height: 1;
+  font-weight: 700;
+  height: vw(85);
+  .menu-item {
+    padding: vw(5) vw(10);
+
+    &.active,
+    &:hover {
+      background-color: #afdaf9;
+    }
+    margin-right: vw(20);
+  }
   @media only screen and (min-width: 1024px) {
     height: 60px;
-    display: flex;
-    align-items: center;
     .menu-item {
       padding: 5px 10px;
-      color: #0f64ad;
-      line-height: 1;
-      font-weight: 700;
 
       &.active,
       &:hover {
@@ -131,6 +140,7 @@ footer {
   @media only screen and (min-width: 1024px) {
     background-image: url(../images/footer.png);
     height: 122px;
+    bottom: -2px;
   }
 }
 
@@ -197,6 +207,11 @@ article {
     width: 100%;
     height: vw(792);
   }
+  p {
+    color: #0F64AD;
+    font-weight: 400;
+    line-height: 1.2;
+  }
   @media only screen and (min-width: 1024px) {
     flex-direction: row;
     width: 1300px;
@@ -204,8 +219,9 @@ article {
     justify-content: space-between;
     padding-bottom: 0;
     align-items: center;
+
     article {
-      width: 856px;
+      width: 1000px;
       height: 725px;
       .wrapper-aboutus {
         height: 100%;
@@ -213,7 +229,10 @@ article {
         flex-direction: column;
         align-items: start;
       }
-      cvvv h1 {
+      p {
+        color: #0F64AD;
+      }
+      h1 {
         font-size: 70px;
       }
       h3 {
