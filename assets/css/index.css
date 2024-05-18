@@ -248,8 +248,10 @@ footer {
 @media only screen and (min-width: 1024px) {
   footer {
     background-image: url(../images/footer.png);
-    height: 122px;
+    height: 6.3541666667vw;
+    max-height: 122px;
     bottom: -2px;
+    background-size: cover;
   }
 }
 
@@ -314,7 +316,7 @@ article h3 {
   height: 123.75vw;
 }
 .aboutus p {
-  color: #0F64AD;
+  color: #0f64ad;
   font-weight: 400;
   line-height: 1.2;
 }
@@ -338,7 +340,7 @@ article h3 {
     align-items: start;
   }
   .aboutus article p {
-    color: #0F64AD;
+    color: #0f64ad;
   }
   .aboutus article h1 {
     font-size: 70px;
@@ -420,7 +422,7 @@ article h3 {
   line-height: 1.2;
   font-weight: 500;
   font-size: 3.90625vw;
-  color: #0F64AD;
+  color: #0f64ad;
   white-space: normal;
 }
 .services .scroll-wrapper .scrollbar .box .image.image-1 {
@@ -499,18 +501,13 @@ article h3 {
 }
 .customers .scroll-wrapper {
   margin-top: 4.6875vw;
-  width: 100%;
-}
-@media only screen and (max-width: 1000px) {
-  .customers .scroll-wrapper {
-    overflow: hidden;
-    overflow-x: scroll;
-    -webkit-overflow-scrolling: touch;
-  }
+  width: 100vw;
+  overflow: hidden;
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 .customers .scroll-wrapper .scrollbar {
   display: flex;
-  width: 166.71875vw;
 }
 @media only screen and (max-width: 1000px) {
   .customers .scroll-wrapper .scrollbar {
@@ -550,24 +547,28 @@ article h3 {
     margin-top: 30px;
     width: 100%;
     display: grid;
-    place-content: center;
+    place-content: flex-start;
+    overflow-x: auto;
   }
-  .customers .scroll-wrapper .scrollbar {
-    display: flex;
-    width: 1300px;
+  .customers .scroll-wrapper.center {
+    place-content: center;
   }
   .customers .scroll-wrapper .scrollbar .box {
     padding: 20px 30px 0 30px;
     border-radius: 10px;
     width: 406px;
     height: 370px;
-    margin-left: 20px;
   }
   .customers .scroll-wrapper .scrollbar .box:first-child {
     margin-right: 20px;
   }
+  .customers .scroll-wrapper .scrollbar .box:not(:last-child) {
+    margin-left: 20px;
+  }
   .customers .scroll-wrapper .scrollbar .box p:not(.author) {
-    height: 250px;
+    height: unset;
+    min-height: 250px;
+    display: block;
   }
   .customers .scroll-wrapper .scrollbar .box p.author {
     margin-top: 10px;

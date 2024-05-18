@@ -139,8 +139,10 @@ footer {
   z-index: 1;
   @media only screen and (min-width: 1024px) {
     background-image: url(../images/footer.png);
-    height: 122px;
+    height: vw1920(122);
+    max-height: 122px;
     bottom: -2px;
+    background-size: cover;
   }
 }
 
@@ -208,7 +210,7 @@ article {
     height: vw(792);
   }
   p {
-    color: #0F64AD;
+    color: #0f64ad;
     font-weight: 400;
     line-height: 1.2;
   }
@@ -230,7 +232,7 @@ article {
         align-items: start;
       }
       p {
-        color: #0F64AD;
+        color: #0f64ad;
       }
       h1 {
         font-size: 70px;
@@ -306,7 +308,7 @@ article {
             line-height: 1.2;
             font-weight: 500;
             font-size: vw(25);
-            color: #0F64AD;
+            color: #0f64ad;
             white-space: normal;
           }
           width: vw(250);
@@ -396,19 +398,16 @@ article {
 
   .scroll-wrapper {
     margin-top: vw(30);
-    width: 100%;
-    @media only screen and (max-width: 1000px) {
-      overflow: hidden;
-      overflow-x: scroll;
-      -webkit-overflow-scrolling: touch;
-    }
+    width: 100vw;
+    overflow: hidden;
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
 
     .scrollbar {
       display: flex;
       @media only screen and (max-width: 1000px) {
         overflow: hidden;
       }
-      width: vw(349 * 3 + 20);
 
       .box {
         padding: vw(20) vw(30) 0 vw(30);
@@ -443,13 +442,14 @@ article {
     .scroll-wrapper {
       margin-top: 30px;
       width: 100%;
-
       display: grid;
-      place-content: center;
+      place-content: flex-start;
+      &.center {
+        place-content: center;
+      }
+      overflow-x: auto;
 
       .scrollbar {
-        display: flex;
-        width: 1300px;
 
         .box {
           padding: 20px 30px 0 30px;
@@ -459,9 +459,13 @@ article {
           &:first-child {
             margin-right: 20px;
           }
-          margin-left: 20px;
+          &:not(:last-child) {
+            margin-left: 20px;
+          }
           p:not(.author) {
-            height: 250px;
+            height: unset;
+            min-height: 250px;
+            display: block;
           }
           p.author {
             margin-top: 10px;
