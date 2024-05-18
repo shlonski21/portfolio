@@ -63,23 +63,41 @@
     </script>
 
     <!-- Meta Pixel Code -->
-<script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '731003548746713');
-  fbq('track', 'PageView');
-  </script>
-  <noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=731003548746713&ev=PageView&noscript=1"
-  /></noscript>
-  <!-- End Meta Pixel Code -->
-  
+    <script>
+      !(function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod
+            ? n.callMethod.apply(n, arguments)
+            : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = "2.0";
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(
+        window,
+        document,
+        "script",
+        "https://connect.facebook.net/en_US/fbevents.js"
+      );
+      fbq("init", "731003548746713");
+      fbq("track", "PageView");
+    </script>
+    <noscript
+      ><img
+        height="1"
+        width="1"
+        style="display: none"
+        src="https://www.facebook.com/tr?id=731003548746713&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
   </head>
   <body>
     <header>
@@ -93,9 +111,16 @@
         </div>
         <div class="menu-item">
           <a
+            href="https://www.youtube.com/channel/UCtph0hTC_WiGkBdPedBZUCA"
+            target="_blank"
+            >עבודות</a
+          >
+        </div>
+        <div class="menu-item">
+          <a
             target="_blank"
             href="https://api.whatsapp.com/send?phone=972542665252"
-            >צרו קשר</a
+            >דברו איתנו</a
           >
         </div>
       </div>
@@ -108,14 +133,14 @@
             <h3>
               עידן הפוסטים הגיע לסופו והשחקן הראשי עכשיו הוא וידאוים ממוקדים
               בעלי ערך שיציגו את העסק שלכם בצורה הכי מקצועית ומדוייקת שיש.
-              <br>
-              אחרי נסיון של שנים סטודיו שלונסקי 21 הגיע בשביל לספק לכם מוצר שלם ומוגמר.
-              <br>
-              לקחת לידיים שלנו את כתיבת, יצירת, צילום ועריכת התוכן לעסק
-              שלכם,
-              <br>
-              שלא רק יעביר בצורה חדה ומדוייקת את מהות העסק - אלא גם תיצור
-              לכם קהילה חזקה של עוקבים ולקוחות בצורה אורגנית!
+              <br />
+              אחרי נסיון של שנים סטודיו שלונסקי 21 הגיע בשביל לספק לכם מוצר שלם
+              ומוגמר.
+              <br />
+              לקחת לידיים שלנו את כתיבת, יצירת, צילום ועריכת התוכן לעסק שלכם,
+              <br />
+              שלא רק יעביר בצורה חדה ומדוייקת את מהות העסק - אלא גם תיצור לכם
+              קהילה חזקה של עוקבים ולקוחות בצורה אורגנית!
             </h3>
           </div>
         </article>
@@ -170,7 +195,8 @@
                 <div class="image image-4">
                   <div class="overlay">
                     <div class="overlay-text">
-                      מסרטי תדמית ועד קליפים לאירוע שלכם - הפקות סרטים מכל הסוגים
+                      מסרטי תדמית ועד קליפים לאירוע שלכם - הפקות סרטים מכל
+                      הסוגים
                     </div>
                   </div>
                 </div>
@@ -213,7 +239,7 @@
           <div class="title">
             <h1>לקוחות ממליצים</h1>
           </div>
-          <div class="scroll-wrapper">
+          <div class="scroll-wrapper" id="customers-scroll">
             <div class="scrollbar">
               <div class="box">
                 <p>
@@ -248,6 +274,40 @@
             </div>
           </div>
         </article>
+        <script>
+          document.addEventListener("DOMContentLoaded", () => {
+            var isMobile = function () {
+              return window.document.body.clientWidth < 1024;
+            };
+            var hasScrollbar = function (element) {
+              var hasVerticalScroll =
+                element.scrollHeight > element.clientHeight;
+
+              var hasHorizontalScroll =
+                element.scrollWidth > element.clientWidth;
+
+              return hasVerticalScroll || hasHorizontalScroll;
+            };
+            var el = document.getElementById("customers-scroll");
+            var el_scroll = document.querySelector(
+              "#customers-scroll .scrollbar"
+            );
+            if (el && el_scroll) {
+              console.log(isMobile());
+              if (!isMobile()) {
+                el_scroll.style.width =
+                  406 * el_scroll.childElementCount + 20 + "px";
+              } else {
+                el_scroll.style.width =
+                  ((349 * el_scroll.childElementCount + 20) / 640) * 100 + "vw";
+                calc($px / 640) * 100 + vw;
+              }
+              if (el_scroll.childElementCount < 7) {
+                el.classList.add("center");
+              }
+            }
+          });
+        </script>
       </section>
       <section class="relationships" id="relationships">
         <article class="center">
